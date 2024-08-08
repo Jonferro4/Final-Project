@@ -8,7 +8,7 @@ exports.seed = async function(knex) {
   const salt = await bcrypt.genSalt(10);
   const password1 = await bcrypt.hash('walmart', salt);
   const password2 = await bcrypt.hash('target', salt);
-  const password3 = await bcrypt.hash('gamestop', salt);
+  const password3 = await bcrypt.hash('costco', salt);
   const password4 = await bcrypt.hash('amazon', salt);
 
   await knex('users').insert([
@@ -25,9 +25,9 @@ exports.seed = async function(knex) {
       password: password2
     },
     {
-      first_name: 'Ryan',
-      last_name: 'Cohen',
-      username: 'GameStop',
+      first_name: 'James',
+      last_name: 'Sinegal',
+      username: 'Costco',
       password: password3
     },
     {

@@ -1,16 +1,37 @@
-for backend installation navigate to the Back-End folder and type:
-npm install express knex sqlite3 bcrypt
+# Program Description
+This is a basic full-stack application that is themed around items commonly found in big retail corporations in America.
+
+It should ideally allow the user full CRUD functionality when it comes to managing the items within their respective inventory.
+
+It should also allow for anyone to create an account and login into thier new account.
+
+A non-registered user will be allowed to see every registered user as well as all the items associated with that user.
 
 
+# Program requirements: 
+Docker Desktop
+
+for installation of required dependencies you'll have to navigate to both the Front-end and back-end folder and type:
+npm install in both directories and this should install everything needed based off of the package.json's
+
+
+# Stack
+Front-end uses: React Vite and TailwindCSS
+Back-end uses: Epress and Node.js
+Database: PostgresSQL
+
+# Setup
 in the root directory run : docker-compose up --build
 
 once completed, open a second terminal and navigate to the Back-End directory
 
 once there run the following commands in order
 
-1:
-docker-compose exec backend npx knex migrate:latest --knexfile /usr/src/app/knexfile.js
-2:
-docker-compose exec backend npx knex seed:run --knexfile /usr/src/app/knexfile.js
+# 1:
+        docker-compose exec backend npx knex migrate:latest --knexfile /usr/src/app/knexfile.js
+# 2:
+        docker-compose exec backend npx knex seed:run --knexfile /usr/src/app/knexfile.js
 
-this will get the Migration files and Seeds to load correctly, Unfortunately after messing around with trying to get them intergrated/automated into the code, I could not get it to work
+These commands will set up the database schema and populate it with initial data.
+
+You must run these migration and seed commands every time you start the application to make sure the database is properly set up.

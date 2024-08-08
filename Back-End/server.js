@@ -23,12 +23,9 @@ const authenticateToken = (req, res, next) => {
     next();
   });
 };
-
 //-------------------------------------------------ROUTES---------------------------------//
 app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
-
-
 //-------------------------------------------------CLIENT AUTHENTICATION CHECK---------------------------------//
 app.get('/api/auth/status', (req, res) => {
   const token = req.cookies.token;

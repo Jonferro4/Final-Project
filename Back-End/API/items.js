@@ -76,5 +76,22 @@ router.patch("/:id", async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
+//-------------------------------------------------DELETE ITEM---------------------------------//
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedCount = await knex('items')
+      .where('id', req.params.id)
+      .del();
+    
+    if (deletedCount === 0) {
+      return res.status(404).json({ message: 'Item not found/doesnt exist' });
+    }
+    
+    res.json({ message: 'Item successfully deleted' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 
 module.exports = router;

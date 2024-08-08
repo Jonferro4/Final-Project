@@ -18,16 +18,26 @@ const Header = () => {
   };
 
   return (
-    <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px' }}>
-      <button onClick={handleHomeClick}>Return to Homepage</button>
+    <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <button 
+        onClick={handleHomeClick}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Return to Homepage
+      </button>
       <div>
         {user ? (
-          <>
-            <span>Logged in as: {user.username}</span>
-            <button onClick={handleLogout} style={{ marginLeft: '10px' }}>Logout</button>
-          </>
+          <div className="flex items-center">
+            <span className="mr-4">Logged in as: {user.username}</span>
+            <button 
+              onClick={handleLogout}
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Logout
+            </button>
+          </div>
         ) : (
-          <span>Not logged in</span>
+          <span className="text-gray-300">Not logged in</span>
         )}
       </div>
     </header>
