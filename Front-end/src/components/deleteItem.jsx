@@ -6,24 +6,20 @@ const DeleteItem = ({ item, onItemDeleted, onCancel }) => {
 
   const handleDelete = async () => {
     setError(null);
-
     try {
       const response = await fetch(`/api/items/${item.id}`, {
         method: 'DELETE',
         credentials: 'include'
       });
-
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to delete item');
       }
-
       onItemDeleted(item.id);
     } catch (err) {
       setError(err.message);
     }
   };
-
   return (
     <div className="bg-gray-800 p-4 rounded-lg shadow-md mt-4">
       <h3 className="text-xl font-semibold mb-4">Delete Item</h3>

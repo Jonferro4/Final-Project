@@ -59,8 +59,7 @@ const EditItem = ({ item, onItemUpdated, onCancel }) => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"
-          />
+            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"/>
         </div>
         <div>
           <label htmlFor="description" className="block text-sm font-medium text-gray-300">Description:</label>
@@ -69,8 +68,7 @@ const EditItem = ({ item, onItemUpdated, onCancel }) => {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"
-          />
+            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"/>
         </div>
         <div>
           <label htmlFor="quantity" className="block text-sm font-medium text-gray-300">Quantity:</label>
@@ -81,8 +79,7 @@ const EditItem = ({ item, onItemUpdated, onCancel }) => {
             value={formData.quantity}
             onChange={handleChange}
             required
-            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"
-          />
+            className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white"/>
         </div>
         <div className="flex justify-between">
           <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Update Item</button>

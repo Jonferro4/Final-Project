@@ -23,13 +23,10 @@ const AllItems = () => {
         setLoading(false);
       }
     };
-
     fetchItems();
   }, []);
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-
   return (
     <div className="bg-gray-900 min-h-screen text-white p-8">
       <h1 className="text-3xl font-bold mb-6">All Items</h1>

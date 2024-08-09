@@ -28,7 +28,6 @@ const Inventory = () => {
         }
         const userData = await userResponse.json();
         setInventoryUser(userData);
-
         const itemsResponse = await fetch(`/api/items/user/${id}`, {
           credentials: 'include'
         });
@@ -40,35 +39,28 @@ const Inventory = () => {
           const itemsData = await itemsResponse.json();
           setItems(itemsData);
         }
-
         setLoading(false);
       } catch (err) {
         setError(err.message);
         setLoading(false);
       }
     };
-
     fetchUserAndItems();
   }, [id, navigate]);
-
   const handleItemCreated = (newItem) => {
     setItems(prevItems => [...prevItems, newItem]);
   };
-
   const handleItemUpdated = (updatedItem) => {
     setItems(prevItems => prevItems.map(item => item.id === updatedItem.id ? updatedItem : item));
     setEditingItem(null);
   };
-
   const handleItemDeleted = (deletedItemId) => {
     setItems(prevItems => prevItems.filter(item => item.id !== deletedItemId));
     setDeletingItem(null);
   };
-
   if (loading) return <div className="text-white">Loading...</div>;
   if (error) return <div className="text-red-500">Error: {error}</div>;
   if (!inventoryUser) return <div className="text-white">User not found</div>;
-
   const isOwnInventory = user && user.id === parseInt(id);
 
   return (
@@ -97,27 +89,22 @@ const Inventory = () => {
       ) : (
         <p className="text-gray-400">This user has no items yet.</p>
       )}
-
       {isOwnInventory && (
         <div className="mt-8">
           <CreateItem userId={inventoryUser.id} onItemCreated={handleItemCreated} />
         </div>
       )}
-
       {editingItem && (
         <EditItem 
           item={editingItem} 
           onItemUpdated={handleItemUpdated} 
-          onCancel={() => setEditingItem(null)} 
-        />
+          onCancel={() => setEditingItem(null)} />
       )}
-
       {deletingItem && (
         <DeleteItem 
           item={deletingItem} 
           onItemDeleted={handleItemDeleted} 
-          onCancel={() => setDeletingItem(null)} 
-        />
+          onCancel={() => setDeletingItem(null)} />
       )}
     </div>
   );

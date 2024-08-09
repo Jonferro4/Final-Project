@@ -25,10 +25,8 @@ const ItemDetail = () => {
         setLoading(false);
       }
     };
-
     fetchItem();
   }, [id]);
-
   if (loading) return <div className="text-white">Loading...</div>;
   if (error) return <div className="text-red-500">Error: {error}</div>;
   if (!item) return <div className="text-white">Item not found</div>;

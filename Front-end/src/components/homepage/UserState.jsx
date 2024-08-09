@@ -16,7 +16,6 @@ export const UserProvider = ({ children }) => {
           'Content-Type': 'application/json',
         },
       });
-  
       if (response.ok) {
         const userData = await response.json();
         setUser(userData.user);
@@ -29,7 +28,6 @@ export const UserProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     checkAuthStatus();
   }, []);
@@ -44,12 +42,10 @@ export const UserProvider = ({ children }) => {
         body: JSON.stringify({ username, password }),
         credentials: 'include'
       });
-
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Login failed');
       }
-
       const userData = await response.json();
       setUser(userData);
       return userData;
@@ -70,11 +66,9 @@ export const UserProvider = ({ children }) => {
       console.error('Logout failed:', error);
     }
   };
-
   if (loading) {
     return <div>Loading...</div>;
   }
-
   return (
     <UserState.Provider value={{ user, login, logout, checkAuthStatus }}>
       {children}

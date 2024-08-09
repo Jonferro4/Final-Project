@@ -17,7 +17,6 @@ const CreateItem = ({ userId, onItemCreated }) => {
       [name]: value
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -35,12 +34,10 @@ const CreateItem = ({ userId, onItemCreated }) => {
         }),
         credentials: 'include'
       });
-
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to create item');
       }
-
       const newItem = await response.json();
       onItemCreated(newItem);
       setFormData({ name: '', description: '', quantity: '' });
@@ -48,7 +45,6 @@ const CreateItem = ({ userId, onItemCreated }) => {
       setError(err.message);
     }
   };
-
   return (
     <div>
       <h3>Create New Item</h3>
