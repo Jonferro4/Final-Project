@@ -67,7 +67,7 @@ const Inventory = () => {
     <div className="bg-gray-900 min-h-screen text-white p-8">
       <Link to="/users" className="text-blue-400 hover:text-blue-300">&larr; Back to All Users</Link>
       <h1 className="text-3xl font-bold mt-4 mb-2">User Profile</h1>
-      <h2 className="text-xl mb-4">{inventoryUser.first_name} {inventoryUser.last_name} (@{inventoryUser.username})</h2>
+      <h2 className="text-xl mb-4">{inventoryUser.first_name} {inventoryUser.last_name} (User ID:{inventoryUser.id}) (@{inventoryUser.username})</h2>
       <h3 className="text-lg font-semibold mb-2">Items:</h3>
       {items.length > 0 ? (
         <ul className="space-y-4">

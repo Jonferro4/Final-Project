@@ -37,6 +37,7 @@ const AllUsers = () => {
               <h2 className="text-xl font-semibold">
                 {user.first_name} {user.last_name}
               </h2>
+              <p className="text-gray-400">User ID:{user.id}</p>
               <p className="text-gray-400">@{user.username}</p>
             </Link>
           </li>
