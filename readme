@@ -35,3 +35,33 @@ once there run the following commands in order
 These commands will set up the database schema and populate it with initial data.
 
 You must run these migration and seed commands every time you start the application to make sure the database is properly set up.
+
+# PROGRAM FUNCTIONALITY
+
+Once the installation steps are completed you should see a webpage with the following buttons: Create account, Login, View All Users, View All Items
+
+Create account:
+when clicked you are promted to input a first name, last name, Username and Password
+
+after create account is clicked, you are then taken back to the homepage where you can then login to your newly created account
+
+Login:
+when the correct username and password are inputted and you click login, you are redirected to your users inventory page
+
+View All users:
+when clicked, you are redirected to list of all the current users registered on the website, from here you can click on each user and see a list of the items in their inventory
+
+when any item is clicked in the users inventory you will be redirected to the specific item page with all necessary information
+
+View All Items:
+When clicked, you are taken to a page that displays all items that exist within the website, when each item is clicked it shows you all the appropriate information about these items
+
+Inventories:
+
+When you are logged in and on your own inventory page you will see all of your items
+
+you are given the ability to edit and delete every item you own
+
+under all of your items, you are also given the ability to create a new item and add it to your inventory
+
+
