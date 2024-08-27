@@ -36,6 +36,8 @@ These commands will set up the database schema and populate it with initial data
 
 You must run these migration and seed commands every time you start the application to make sure the database is properly set up.
 
+In docker you MUST use the 80:80 Server to avoid 404 errors
+
 # PROGRAM FUNCTIONALITY
 
 Once the installation steps are completed you should see a webpage with the following buttons: Create account, Login, View All Users, View All Items
